@@ -4,20 +4,6 @@
   margin: 24px;
 }
 
-// 动态圆圈
-.orna-circle {
-  position: absolute;
-  top: 50%;
-  background-color: #7d6ee7;
-  opacity: .078;
-  width: 500px;
-  height: 500px;
-  margin-left: -250px;
-  margin-top: -250px;
-  -webkit-animation: circle_animation 7s linear infinite;
-  animation: circle_animation 7s linear infinite;
-}
-
 @-webkit-keyframes circle_animation {
 
   0%,
