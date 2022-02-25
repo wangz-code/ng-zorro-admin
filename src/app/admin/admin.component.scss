@@ -1,0 +1,200 @@
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  line-height: 32px;
+  transition: padding .3s cubic-bezier(.645, .045, .355, 1);
+
+  &.sider-collapsed {
+    padding: 16px 26px;
+  }
+
+  img {
+    display: inline-block;
+    height: 32px;
+    vertical-align: middle;
+  }
+
+  h1 {
+    height: 32px;
+    margin: 0 0 0 12px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    vertical-align: middle;
+    // 一行省略
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.ant-layout-sider-dark {
+  .logo h1 {
+    color: #fff;
+  }
+}
+
+.ant-layout-sider-light {
+  .logo h1 {
+    color: #1890ff;
+  }
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+}
+
+:host ::ng-deep {
+  nz-sider {
+    width: 208px;
+    position: relative;
+
+    &.fixed {
+      overflow: hidden;
+      height: 100%;
+      position: fixed;
+      left: 0;
+    }
+
+    .ant-layout-sider-children {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      .left-menu {
+        flex: 1;
+        overflow: auto;
+
+        // 火狐隐藏侧边栏滚动条
+        scrollbar-width: none;
+
+        // 隐藏侧边栏滚动条
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+nz-header {
+  background: #fff;
+  padding: 0 16px;
+  transition: width 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+
+  &.dark {
+    background: #000;
+  }
+
+  &.fixed {
+    position: fixed;
+    width: calc(100% - 208px);
+
+    &.collapsed {
+      width: calc(100% - 80px);
+    }
+  }
+}
+
+.ant-layout-header {
+  height: 48px;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
+  display: flex;
+  z-index: 19;
+}
+
+.header-right {
+  display: flex;
+}
+
+.header-action {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: all .3s;
+
+  i {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, .025);
+  }
+
+  &.header-search:hover {
+    background: inherit;
+  }
+}
+
+.search-input {
+  width: 0;
+  margin-left: 0;
+  transition: width .3s, margin-left .3s;
+
+  &.show {
+    width: 210px;
+    margin-left: 12px;
+  }
+
+  .ant-input {
+    border-radius: 0;
+    padding: 4px 0;
+    border: none;
+    border-bottom: 1px solid #d9d9d9;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.header-bell {
+  position: relative;
+
+  .ant-badge {
+    position: absolute;
+    top: 0px;
+    left: 17px;
+  }
+}
+
+nz-content {
+  overflow: initial;
+}
+
+nz-footer {
+  text-align: center;
+}
+
+.drawer-handle {
+  position: fixed;
+  top: 240px;
+  right: 0;
+  background: #1890ff;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: right 0.3s;
+
+  i {
+    color: #ffffff;
+    font-size: 20px;
+  }
+
+  &.open {
+    right: 300px;
+    z-index: 9999;
+  }
+}
