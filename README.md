@@ -2,8 +2,10 @@
 
 
 # 介绍
-项目基于`angular` `ng-zorro-antd` 开发，
+项目基于`angular` `ng-zorro-antd` 开发
+
 项目模板根据: [llkui / ng-antd-admin](https://github.com/llkui/ng-antd-admin) 进行二次开发
+
 参照 `Ant Design Pro` 实现的angular风格的后台管理系统  
 
 
